@@ -90,7 +90,7 @@ export function writeSession(response: NextResponse, session: NotionSession): vo
   response.cookies.set(SESSION_COOKIE_NAME, encryptSession(session), {
     httpOnly: true,
     secure: IS_PRODUCTION,
-    sameSite: "lax",
+    sameSite: "none",
     path: "/",
     maxAge: SESSION_MAX_AGE_SECONDS,
   });
