@@ -35,7 +35,7 @@ export async function GET(_request: NextRequest) {
     response.cookies.set(STATE_COOKIE_NAME, state, {
       httpOnly: true,
       secure: IS_PRODUCTION,
-      sameSite: "lax",
+      sameSite: "none",
       path: "/",
       maxAge: STATE_COOKIE_MAX_AGE_SECONDS,
     });
