@@ -153,8 +153,7 @@ export function validateDatabaseSchema(
     };
   });
 
-  const isReady = results.every((result) => result.optional || result.status === "matched");
-
+const isReady = results.every((result) => result.optional || result.status === "matched" || Boolean(result.suggestion));
   return { isReady, properties: results };
 }
 
